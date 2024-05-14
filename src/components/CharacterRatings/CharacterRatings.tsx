@@ -21,9 +21,7 @@ export function CharacterRatingTable({ characters }: CharacterDataProps) {
         </thead>
         <tbody>
           {topFive.map((character, itemIndex) => {
-            const adjustIndex = itemIndex + 1;
-            const theme = adjustIndex % 2 === 0;
-            return <TableData character={character} key={character.name} theme={theme} />;
+            return <TableData character={character} key={character.name} index={itemIndex} />;
           })}
         </tbody>
       </table>

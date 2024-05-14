@@ -2,11 +2,14 @@ import { Character } from '../../../fma-data';
 
 type Props = {
   character: Character;
-  theme: boolean;
+  index: number;
 };
 
-const TableData = ({ character, theme }: Props) => {
+const TableData = ({ character, index }: Props) => {
   const { name, skillset, votes } = character;
+
+  const adjustIndex = index + 1;
+  const theme = adjustIndex % 2 === 0;
   return (
     <tr key={name} className={`${theme ? 'light' : 'dark'}`}>
       <td>{name}</td>
