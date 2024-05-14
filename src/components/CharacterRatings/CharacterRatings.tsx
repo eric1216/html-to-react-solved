@@ -1,5 +1,6 @@
-import '../css/character-ratings.css';
-import { Character } from '../fma-data';
+import './CharacterRatings.css';
+import { Character } from '../../fma-data';
+import TableData from './_components/TableData';
 
 type CharacterDataProps = {
   characters: Character[];
@@ -19,16 +20,10 @@ export function CharacterRatingTable({ characters }: CharacterDataProps) {
           </tr>
         </thead>
         <tbody>
-          {topFive.map((item, itemIndex) => {
+          {topFive.map((character, itemIndex) => {
             const adjustIndex = itemIndex + 1;
             const theme = adjustIndex % 2 === 0;
-            return (
-              <tr key={itemIndex} className={`${theme ? 'light' : 'dark'}`}>
-                <td>{item.name}</td>
-                <td>{item.skillset}</td>
-                <td>{item.votes}</td>
-              </tr>
-            );
+            return <TableData character={character} key={character.name} theme={theme} />;
           })}
         </tbody>
       </table>

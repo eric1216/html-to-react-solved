@@ -1,22 +1,15 @@
 import './css/reset.css';
 import './css/style.css';
-import './css/header.css';
 
 import { data } from './fma-data';
-import { CharacterRatingTable } from './components/characterRatingComponent';
-import { CharacterCards } from './components/characterCardsComponent';
+import { CharacterRatingTable } from './components/CharacterRatings/CharacterRatings';
+import { CharacterCards } from './components/CharacterCards/CharacterCards';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <>
-      <header>
-        <h1>Fullmetal Alchemist</h1>
-        <nav>
-          <li>about us</li>
-          <li>info</li>
-          <li>support us</li>
-        </nav>
-      </header>
+      <Header />
       <CharacterRatingTable characters={data} />
       <CharacterCards characters={data} />
     </>
