@@ -5,7 +5,7 @@ type Props = {
   index: number;
 };
 
-const TableData = ({ character, index }: Props) => {
+const TableDataRow = ({ character, index }: Props) => {
   const { name, skillset, votes } = character;
 
   const adjustIndex = index + 1;
@@ -19,4 +19,4 @@ const TableData = ({ character, index }: Props) => {
   );
 };
 
-export default TableData;
+export default TableDataRow;

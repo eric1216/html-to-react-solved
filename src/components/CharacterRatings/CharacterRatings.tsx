@@ -1,6 +1,6 @@
 import './CharacterRatings.css';
 import { Character } from '../../fma-data';
-import TableData from './_components/TableData';
+import TableDataRow from './_components/TableDataRow';
 
 type CharacterDataProps = {
   characters: Character[];
@@ -21,7 +21,7 @@ export function CharacterRatingTable({ characters }: CharacterDataProps) {
         </thead>
         <tbody>
           {topFive.map((character, itemIndex) => {
-            return <TableData character={character} key={character.name} index={itemIndex} />;
+            return <TableDataRow character={character} key={character.name} index={itemIndex} />;
           })}
         </tbody>
       </table>
